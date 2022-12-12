@@ -1,0 +1,14 @@
+---
+- name: "Setup_Application"
+  hosts: localhost
+
+  tasks:
+  - name: "Docker_Compose_Build"
+    shell:
+      cmd: "docker compose build"
+      chdir: /home/ec2-user/doctorly
+
+  - name: "Run_Container_and_DB"
+    shell:
+      cmd: "docker compose up -d"
+      chdir: /home/ec2-user/doctorly
